@@ -13,6 +13,6 @@ Person.prototype.name = function() {
     return this.firstName + " " + this.lastName;
 };
 
-Person.prototype.getAge = function(){  
-	return this.age;
+Person.prototype.getAge = function(){    
+	return this.age;  
 }
