@@ -24,7 +24,7 @@
 				alert("pasig city");
 			}  
 			mar.CreateAddress = function(){
-				alert("Laguna");  
+				alert("Laguna to taguig");  
 			}
 	// This how you call the method you created!!		
 			mar.CreateAddress();
