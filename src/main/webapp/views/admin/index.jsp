@@ -22,7 +22,7 @@
 	// This is how you add a functionality outside the function, (Not a good practice since it eliminates the sense of OOP)		
 			erica.CreateAddres = function(){
 				alert("pasig city");
-			}
+			}  
 			mar.CreateAddress = function(){
 				alert("Laguna");  
 			}
