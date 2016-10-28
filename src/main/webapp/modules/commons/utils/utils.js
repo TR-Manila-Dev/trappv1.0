@@ -16,3 +16,7 @@ Person.prototype.name = function() {
 Person.prototype.getAge = function(){    
 	return this.age;  
 }
+
+Person.prototype.CreateAddress = function() {
+	alert("alert mckinley from object");
+}
