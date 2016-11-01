@@ -9,7 +9,7 @@
 <body>
 	<h1>File Upload with Jersey</h1>
 
-	<form action="webapi/upload" method="post"
+	<form action="../../upload" method="post"
 		enctype="multipart/form-data">
   
 		<p>
