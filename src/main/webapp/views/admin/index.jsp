@@ -4,13 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Admin</title>
-
-	<script src="../../modules/commons/utils/utils.js"></script>
-	<script src="../../modules/lib/jquery-1.11.1.min.js"></script>
-	<script src="../../modules/lib/jquery-1.11.1.min.map"></script>
+<title>admin page</title>
 </head>
 <body>
+<<<<<<< HEAD
 		<script>
 	//Jquery Code	
 	$(document).ready(function(){
@@ -34,5 +31,8 @@
 			
 			mar.CreateAddress();
 		</script>
+=======
+
+>>>>>>> branch 'master' of https://github.com/TR-Manila-Dev/trappv1.0
 </body>
 </html>
