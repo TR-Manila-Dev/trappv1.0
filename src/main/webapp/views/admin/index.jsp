@@ -7,6 +7,36 @@
 <title>admin page</title>
 </head>
 <body>
+<<<<<<< HEAD
 	    
+=======
+<<<<<<< HEAD
+		<script>
+	//Jquery Code	
+	$(document).ready(function(){
+		alert("javascript is working!!!");
+	});	
+	//This is how you initialized an object in javscript	
+			var mar = new Person("Mar", "Angelo", "28", "black");
+			var erica = new Person("Erica", "Salcedo", "20", "black");
+	// This is how you add a functionality outside the function, (Not a good practice since it eliminates the sense of OOP)		
+			erica.CreateAddres = function(){
+				alert("pasig city");
+			}  
+			mar.CreateAddress = function(){
+				alert("Laguna to taguig");  
+			}
+			
+	// This how you call the method you created!!		
+			mar.CreateAddress();
+			erica.CreateAddres();
+			
+			
+			mar.CreateAddress();
+		</script>
+=======
+
+>>>>>>> branch 'master' of https://github.com/TR-Manila-Dev/trappv1.0
+>>>>>>> 9dec9382f3cfa29b471a603aedd80668034a1f51
 </body>
 </html>
