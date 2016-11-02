@@ -26,10 +26,13 @@
 			mar.CreateAddress = function(){
 				alert("Laguna to taguig");  
 			}
+			
 	// This how you call the method you created!!		
 			mar.CreateAddress();
 			erica.CreateAddres();
 			
+			
+			mar.CreateAddress();
 		</script>
 </body>
 </html>
