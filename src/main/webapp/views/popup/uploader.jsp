@@ -9,14 +9,14 @@
 <body>
 	<h1>File Upload with Jersey</h1>
 
-	<form action="../../upload" method="post"
+	<form action="../../UploadFile" method="post"
 		enctype="multipart/form-data">
   
 		<p>
 			Select a file : <input type="file" name="file" size="45" />
 		</p>
 
-		<input type="submits" value="Upload It" />
+		<input type="submit" value="Upload It" />
 	</form>
 </body>
 </html>
