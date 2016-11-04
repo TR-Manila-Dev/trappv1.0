@@ -17,7 +17,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.output.*;
 
 
-@WebServlet("/upload")  
+@WebServlet("/UploadFile")  
 public class UploadFile extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
