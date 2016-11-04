@@ -1,5 +1,9 @@
 /target/
 .classpath
 .project
+<<<<<<< HEAD
 .settings
 web.xml
+=======
+.settings*
+>>>>>>> refs/remotes/origin/master
