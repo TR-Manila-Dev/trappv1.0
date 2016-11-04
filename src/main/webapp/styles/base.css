@@ -195,6 +195,10 @@
 .m-l-xl {
   margin-left: 40px;
 }
+.m-l-xxl {
+  margin-left: 5s0px;
+}
+
 .m-l-n-xxs {
   margin-left: -1px;
 }
@@ -291,6 +295,11 @@
 .m-r-xl {
   margin-right: 40px;
 }
+
+.m-r-xxl {
+  margin-right: 50px;
+}
+
 .m-r-n-xxs {
   margin-right: -1px;
 }
@@ -463,6 +472,7 @@ html {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	width:100%;
 	overflow-x: hidden!important;
 }
 body {
@@ -473,6 +483,7 @@ body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	width:100%;
 }
 
 
@@ -521,12 +532,7 @@ img {
 
 
 #sidebar {
-	position:fixed;
-
-}
-
-.container-fluid {
-	padding-right: 0;
+		height: 90vh;
 }
 
 
@@ -545,10 +551,58 @@ img {
   transition: all 0.4s ease 0s;
   position: relative;
   min-height: 100%;
-  padding-left: 5%;   
+  
 }
 
 .footer {
-	height: 500px;
-	text-align:center;
+	bottom:0hv;
+}
+
+
+
+.modal-header {
+	border-bottom:none;
+}
+
+.modal-footer {
+	border-top:none;
+}
+
+
+.carousel {
+    margin-bottom: 0;
+	padding: 0 40px 30px 40px;
+}
+/* Reposition the controls slightly */
+.carousel-control {
+	left: -12px;
+}
+.carousel-control.right {
+	right: -12px;
+}
+/* Changes the position of the indicators */
+.carousel-indicators {
+	right: 50%;
+	top: auto;
+	bottom: 0px;
+	margin-right: -19px;
+}
+/* Changes the colour of the indicators */
+.carousel-indicators li {
+	background: #c0c0c0;
+}
+.carousel-indicators .active {
+background: #333333;
+}
+
+.carousel-control.right {
+	background-image: none;
+}
+
+.carousel-control:hover {
+	color:#0099C4;
+}
+
+.small {
+	font-size:80%;
 }
