@@ -561,17 +561,17 @@ img {
 
 
 .modal-header {
-	border-bottom:none;
+	border-bottom: 1px solid #D0D0D0;
+	border-radius:6px 6px 0 0;
 }
 
 .modal-footer {
 	border-top:none;
 }
 
-
 .carousel {
     margin-bottom: 0;
-	padding: 0 40px 30px 40px;
+	padding: 30px 40px 30px 40px;
 }
 /* Reposition the controls slightly */
 .carousel-control {
@@ -595,7 +595,7 @@ img {
 background: #333333;
 }
 
-.carousel-control.right {
+.carousel-control.right, .carousel-control.left {
 	background-image: none;
 }
 
@@ -605,4 +605,9 @@ background: #333333;
 
 .small {
 	font-size:80%;
+}
+
+
+#modal_appTitle a span:hover {
+	color: #0099C4;
 }

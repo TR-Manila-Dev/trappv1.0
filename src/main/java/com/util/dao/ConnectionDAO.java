@@ -1,60 +1,72 @@
 package com.util.dao;
 
 import java.sql.Connection;
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 public class ConnectionDAO {
-	private static DataSource surveyDS = null;
-	private static Context surveyContext = null;
+	private static DataSource trackDS = null;
+	private static Context trackContext = null;
 
 	
-	public static DataSource iSurveyConntest() throws Exception {
-		if (surveyDS != null) { 
-			return surveyDS;
+	public static DataSource trackConntest() throws Exception {
+		if (trackDS != null) { 
+			return trackDS;
 		}
 			
 		try {
-			if (surveyContext == null) {
-				surveyContext = new InitialContext();
+			if (trackContext == null) {
+				trackContext = new InitialContext();
 			}
 
-			surveyDS = (DataSource) surveyContext.lookup("iSurveyconnectionpooltest"); 
+			trackDS = (DataSource) trackContext.lookup("jdbc/track_mysql_resource"); 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());   
 		}
 
-		return surveyDS;
+		return trackDS;
 	}
 	
-	public static DataSource iSurveyConntest(String connectionPoolName) throws Exception {
-		if (surveyDS != null) { 
-			return surveyDS;
-		}
-			
-		try {
-			if (surveyContext == null) {
-				surveyContext = new InitialContext();
-			}
-
-			surveyDS = (DataSource) surveyContext.lookup(connectionPoolName); 
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-
-		return surveyDS;
-	}
 	
-	protected static Connection MssConnection() {
+	protected static Connection LocalDbConnect() {
 		Connection conn = null;
 		try {
-			conn = iSurveyConntest().getConnection();
+			conn = trackConntest().getConnection();
 			return conn;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return conn;
 	}
-}
+}	
+	
+/*	public static DataSource trackConntest(String connectionPoolName) throws Exception {
+		if (trackDS != null) { 
+			return trackDS;
+		}
+			
+		try {
+			if (trackContext == null) {
+				trackContext = new InitialContext();
+			}
+
+			trackDS = (DataSource) trackContext.lookup(connectionPoolName); 
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		return trackDS;
+	}
+	
+	protected static Connection MssConnection() {
+		Connection conn = null;
+		try {
+			conn = trackConntest().getConnection();
+			return conn;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return conn;
+	}*/
+

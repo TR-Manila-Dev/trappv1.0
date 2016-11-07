@@ -9,28 +9,28 @@ import java.sql.Types;
 import org.codehaus.jettison.json.JSONObject;
 import org.json.JSONArray;
 
+import com.util.beans.ResultSetConverter;
 import com.util.dao.ConnectionDAO;
 
 public class TrackBeans {
 
-	public JSONObject InsertQuestionsAndAnswerTypeAse(String surveyId) {
+	public JSONArray GetAllApps() throws SQLException,Exception {
 		CallableStatement query = null;
 		Connection connection = null;
 		ResultSet rs = null;
-
 		try {
 
-			connection = ConnectionDAO.iSurveyConntest().getConnection();
+			connection = ConnectionDAO.trackConntest().getConnection();
 
-			String sql = "call iperform_survey_db_test.sp_ase_add_question_and_answer_type_mapping(?,?,?,?)";
+			String sql = "call db_trapp.getallapps()";
 
 			query = connection.prepareCall(sql);
-			Integer counter = 1;
-
-			query.setString(1, surveyId);
-
-			query.executeUpdate();
-
+			query.executeQuery(); 
+			
+			return ResultSetConverter.convert(rs);
+			
+			
+			
 		} catch (SQLException e) {
 			e.getMessage();
 		} catch (Exception e) {
@@ -50,8 +50,8 @@ public class TrackBeans {
 				e.getMessage();
 			}
 		}
-		JSONObject test = new JSONObject();
-		
-		return test;
+
+
+		return null;
 	}
 }

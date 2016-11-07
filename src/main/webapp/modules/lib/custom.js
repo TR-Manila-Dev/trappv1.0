@@ -1,8 +1,22 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
     $('#myCarousel').carousel({
 	    interval: 10000
 	})
+	
 });
+
+$(document).on('ready', function() {
+	 $("#thumbs_upload").fileinput({
+	        showUpload: false,
+	        maxFileCount: 6,
+	        mainClass: "input-group-lg"
+	    });
+});*/
+
+
+
+
+
 
 
 //Starrr plugin (https://github.com/dobtco/starrr)
@@ -120,3 +134,5 @@ $( document ).ready(function() {
     $('#count-existing').html(value);
   });
 });
+
+

@@ -6,75 +6,62 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-
-import org.codehaus.jettison.json.*;
-import javax.json.*;
 import com.util.beans.TrackBeans;
+
+import javax.json.JsonObject;
+import javax.ws.rs.Consumes;
+import java.sql.SQLException;
+import org.codehaus.jettison.json.JSONObject;
+import org.json.JSONArray;
+
+
 /**
- * Root resource (exposed at "myresource" path)
+ * Root resource (exposed at "MyResource" path)
  */
 @Path("myresource")
 public class MyResource {
-
-    /**
-     * Method handling HTTP GET requests. The returned object will be sent
-     * to the client as "text/plain" media type.
-     *
-     * @return String that will be returned as a text/plain response.
-     */
+	
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
         return "Got it!";
     }
     
-    @Path("/savenewasesurvey")
-	@POST
+    @Path("/getallapps")
+	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response CreateNewSurveyASE(String DATA) {
+	public Response GetApps(String DATA) {
 		boolean success = false;
 		try {
 			Response rb = null;
 			JSONObject json = new JSONObject(DATA);
-			String surveyName = json.optString("surveyName", "");
-			String surveyDesc = json.optString("surveyDesc", "");
-			String surveyCreator = json.optString("surveyCreator", "");
-			String isAnonymous = json.optString("isAnonymous", "");
-
-			String surveyType = json.optString("surveyType", "");
-			String quarter = json.optString("quarter", "");
-			String year = json.optString("year", "");
+			String appId = json.optString("appId", "");
+		/*	String appTitle = json.optString("appTitle", "");
+			String appLink = json.optString("appLink", "");
+			String developer = json.optString("developer", "");
+			String category = json.optString("category", "");
+			String appScore = json.optString("appScore", "");
+			String avatar = json.optString("avatar", "");*/
 
 			TrackBeans trb = new TrackBeans();
-
-			JSONObject JSONreturn = trb.InsertQuestionsAndAnswerTypeAse("");
+			JSONArray JSONreturn = trb.GetAllApps();
 			
-			String surveyId = JSONreturn.optString("surveyId", "");
-			StringBuilder sb = new StringBuilder();
-
-			if (JSONreturn.optString("error", "").equals("")) {
-				sb.append("{\"success\":\"success\",\"surveyId\":\"");
-				sb.append(surveyId + "\"}");
-				rb = Response.ok(sb.toString()).build();
-			} else {
-				sb.append("{\"error\":\"" + JSONreturn.optString("error") + "\"}");
-				rb = Response.status(500).entity("{\"error\":\"Name already exists\"}").build();
-			}
-
+			rb = Response.ok(JSONreturn.toString()).build();
 			return rb;
 
 		} catch (NullPointerException h) {
 
-			return Response.status(400).entity("You have empty parameter").build();
+			return Response.status(400).entity("You have an empty parameter").build();
 
 		} catch (Exception e) {
 			Response.ok("{\"error\":\"" + e.getMessage() + "\"}").build();
+		
 		} finally {
 			success = false;
 		}
 
 		return Response.status(500)
-				.entity("{\"error\":\"There was an error on the code kindly contact marangelo.delatorre@thomsonreuters.com\"}")
+				.entity("{\"error\":\"500\"}")
 				.build();
 
 	}
