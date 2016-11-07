@@ -7,10 +7,7 @@
 <title>admin page</title>
 </head>
 <body>
-<<<<<<< HEAD
-	    
-=======
-<<<<<<< HEAD
+
 		<script>
 	//Jquery Code	
 	$(document).ready(function(){
@@ -34,9 +31,7 @@
 			
 			mar.CreateAddress();
 		</script>
-=======
 
->>>>>>> branch 'master' of https://github.com/TR-Manila-Dev/trappv1.0
->>>>>>> 9dec9382f3cfa29b471a603aedd80668034a1f51
+
 </body>
 </html>

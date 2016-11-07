@@ -5,7 +5,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response;  
 import com.util.beans.TrackBeans;
 
 import javax.json.JsonObject;
@@ -13,13 +13,13 @@ import javax.ws.rs.Consumes;
 import java.sql.SQLException;
 import org.codehaus.jettison.json.JSONObject;
 import org.json.JSONArray;
-
+  
 
 /**
  * Root resource (exposed at "MyResource" path)
  */
 @Path("myresource")
-public class MyResource {
+public class MyResource {  
 	
     @GET
     @Produces(MediaType.TEXT_PLAIN)
@@ -29,7 +29,7 @@ public class MyResource {
     
     @Path("/getallapps")
 	@GET
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)      
 	public Response GetApps(String DATA) {
 		boolean success = false;
 		try {
