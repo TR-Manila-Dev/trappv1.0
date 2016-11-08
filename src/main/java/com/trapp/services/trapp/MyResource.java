@@ -36,12 +36,12 @@ public class MyResource {
 			Response rb = null;
 			JSONObject json = new JSONObject(DATA);
 			String appId = json.optString("appId", "");
-		/*	String appTitle = json.optString("appTitle", "");
+			String appTitle = json.optString("appTitle", "");
 			String appLink = json.optString("appLink", "");
 			String developer = json.optString("developer", "");
 			String category = json.optString("category", "");
 			String appScore = json.optString("appScore", "");
-			String avatar = json.optString("avatar", "");*/
+			String avatar = json.optString("avatar", "");
 
 			TrackBeans trb = new TrackBeans();
 			JSONArray JSONreturn = trb.GetAllApps();

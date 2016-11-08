@@ -33,7 +33,7 @@ public class UploadFile extends HttpServlet {
 		 int maxFileSize = 1000000 * 1024;
 		 int maxMemSize = 4 * 1024;
 		 File file;
-		 
+		   
 		// Check that we have a file upload request
 		isMultipart = ServletFileUpload.isMultipartContent(request);
 		response.setContentType("text/html");

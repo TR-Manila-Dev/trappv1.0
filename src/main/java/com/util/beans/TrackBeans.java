@@ -29,8 +29,6 @@ public class TrackBeans {
 			
 			return ResultSetConverter.convert(rs);
 			
-			
-			
 		} catch (SQLException e) {
 			e.getMessage();
 		} catch (Exception e) {
